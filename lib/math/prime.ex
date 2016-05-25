@@ -3,11 +3,11 @@ defmodule Math.Prime do
   Helper module to work with prime numbers.
   """
 
-  def is_prime(number) when number < 2 do
+  def prime?(number) when number < 2 do
     false
   end
 
-  def is_prime(number) do
+  def prime?(number) do
     Math.largest_factor(number) === 1
   end
 
@@ -30,8 +30,8 @@ defmodule Math.Prime do
 
   def smallest_prime_factor(number) do
     2..number
-    |> Stream.filter(fn x -> is_prime(x) end)
-    |> Stream.filter(fn x -> Math.is_factor(x, number) end)
+    |> Stream.filter(&prime?(&1))
+    |> Stream.filter(&Math.factor?(&1, number))
     |> Stream.take(1)
     |> Enum.to_list
     |> hd

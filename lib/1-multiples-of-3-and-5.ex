@@ -11,8 +11,8 @@ defmodule Euler.Problem1 do
   233168
   """
   def solve do
-    0..999
-    |> Enum.filter(fn i -> Math.is_factor(3, i) || Math.is_factor(5, i) end)
+    1..999
+    |> Enum.filter(fn x -> Math.factor?(3, x) || Math.factor?(5, x) end)
     |> Math.sum
   end
 end

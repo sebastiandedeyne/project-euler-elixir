@@ -7,17 +7,21 @@ defmodule Math do
     0
   end
 
-  def is_factor(factor, number) do
-    rem(number, factor) === 0
+  def factor?(factor, number) do
+    rem(number, factor) == 0
   end
 
-  def is_even(number) do
-    is_factor(2, number)
+  def even?(number) do
+    factor?(2, number)
+  end
+
+  def filter_even(list) do
+    Enum.filter(list, &even?(&1))
   end
 
   def smallest_factor(number) do
     2..number
-    |> Stream.filter(fn x -> Math.is_factor(x, number) end)
+    |> Stream.filter(fn x -> Math.factor?(x, number) end)
     |> Stream.take(1)
     |> Enum.to_list
     |> hd
