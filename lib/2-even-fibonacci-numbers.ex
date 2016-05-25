@@ -15,7 +15,7 @@ defmodule Euler.Problem2 do
   """
   def solve do
     Math.Fibonacci.generate(4000000)
-      |> Math.filter_even
-      |> Math.sum
+    |> Math.filter_even
+    |> Math.sum
   end
 end
