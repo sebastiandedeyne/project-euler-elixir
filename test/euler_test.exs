@@ -4,4 +4,5 @@ defmodule EulerTest do
   doctest Euler.Problem2
   doctest Euler.Problem3
   doctest Euler.Problem4
+  doctest Euler.Problem5
 end
