@@ -11,6 +11,11 @@ defmodule Math.Prime do
     Math.largest_factor(number) === 1
   end
 
+  def generate(limit) do
+    2..limit
+    |> Enum.filter(&prime?(&1))
+  end
+
   def prime_factors(number) do
     smallest = smallest_prime_factor(number)
 

@@ -7,6 +7,14 @@ defmodule Math do
     0
   end
 
+  def multiply([head | tail]) do
+    head * multiply(tail)
+  end
+
+  def multiply([]) do
+    1
+  end
+
   def factor?(factor, number) do
     rem(number, factor) == 0
   end
